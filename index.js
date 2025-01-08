@@ -2,6 +2,7 @@ import express from 'express'
 import 'dotenv/config'
 import musicsRouter from './routes/musicsRouter.js'
 import userRouter from './routes/usersRouter.js'
+import postsRouter from './routes/postsRouter.js'
 import cors from 'cors'
 import mongoose from 'mongoose'
 
@@ -13,7 +14,7 @@ app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({extended : false}))
 
-app.use('/api', musicsRouter, userRouter)
+app.use('/api', musicsRouter, userRouter, postsRouter)
 
 app.get('/', (request, response) => {
     response.send(`Welcome to my API`)
