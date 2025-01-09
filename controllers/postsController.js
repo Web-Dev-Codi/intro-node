@@ -2,6 +2,7 @@ import Post from '../models/Posts.js'
 
 
 export const getAllPosts = async (req, res) => {
+    console.log(req.user)
     try{
         const posts = await Post.find().populate('userId')
         if(posts.length < 1){

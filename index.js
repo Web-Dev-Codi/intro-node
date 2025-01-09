@@ -17,6 +17,7 @@ app.use(express.urlencoded({extended : false}))
 
 app.use('/api', musicsRouter, userRouter, postsRouter, authRouter)
 
+
 app.get('/', (request, response) => {
     response.send(`Welcome to my API`)
 })
